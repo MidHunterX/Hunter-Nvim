@@ -49,7 +49,6 @@ return {
       "vim",
       "vimdoc",
       "yaml",
-      "zathurarc",
     }
 
     for _, parser in ipairs(parsers) do
