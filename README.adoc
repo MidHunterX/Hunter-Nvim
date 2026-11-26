@@ -177,6 +177,36 @@ yay -Sy android-sdk \
 android-sdk-platform-tools provides the `adb` command.
 
 [discrete]
+=== Android Compose (Kotlin)
+
+CLI tooling for native Android is still catching up compared to the mature Flutter CLI workflow.
+
+[source,bash]
+----
+yay -S android-cli
+----
+
+Here's how you can create a project:
+
+[source,bash]
+----
+# Get latest version and project templates
+sudo android update
+
+# Create project with empty compose activity
+android create --name="My Application" --application-id=com.example.myapp --output=./my-app
+----
+
+Make sure to connect your android device, enable "Developer options" and "USB debugging", then check with `adb devices`.
+
+Now to run it, first build apk with `./gradlew assembleDebug` then just run:
+
+[source,bash]
+----
+android run --apks=app/build/outputs/apk/debug/app-debug.apk
+----
+
+[discrete]
 === Flutter (Dart)
 
 First install Android SDK. If you want to build native Android apps, you'll need Android NDK also (around 2.5 GB).
